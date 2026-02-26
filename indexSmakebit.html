@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kursoppsummering</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom right, #cceeff, #e6f7ff);
+    color: #00334d;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px 30px 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+header p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.1rem;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Dokumentasjon fra Kurset</h1>
+    <p>
+        Her ser du tre høydepunkter fra kurset. Vi jobbet praktisk, samarbeidet i team 
+        og utviklet både teknisk og pedagogisk kompetanse gjennom varierte oppgaver.
+    </p>
+</header>
+
+<section class="gallery">
+
+    <div class="card">
+        <img src="1.jpg" alt="Kursbilde 1">
+        <div class="card-content">
+            <h3>Praktisk arbeid</h3>
+            <p>Elevene jobbet med nettverksoppsett og feilsøking.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="2.jpg" alt="Kursbilde 2">
+        <div class="card-content">
+            <h3>Samarbeid</h3>
+            <p>Teamarbeid og problemløsning i fokus.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="3.jpg" alt="Kursbilde 3">
+        <div class="card-content">
+            <h3>Presentasjon</h3>
+            <p>Deltakerne presenterte løsninger og refleksjoner.</p>
+        </div>
+    </div>
+
+    
+    <div class="card">
+        <img src="4.jpg" alt="Kursbilde 3">
+        <div class="card-content">
+            <h3>Teknisk utfordrende</h3>
+            <p>Mye læring for alle</p>
+        </div>
+    </div>
+
+    
+    <div class="card">
+        <img src="5.jpg" alt="Kursbilde 3">
+        <div class="card-content">
+            <h3>Nye utfordringer</h3>
+            <p>Gøy for alle.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Kursdokumentasjon
+</footer>
+
+</body>
+</html>
