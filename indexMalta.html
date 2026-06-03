@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Malta Guide</title>
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+}
+
+#map{
+    width:100%;
+    height:100vh;
+}
+
+.popup-img{
+    width:250px;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+.popup-title{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.popup-text{
+    margin-top:5px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+
+
+function makePopup(place){
+
+    let index = 0;
+
+    const container = L.DomUtil.create('div');
+    container.style.textAlign = "center";
+
+    const title = L.DomUtil.create('h3', '', container);
+
+    const img = L.DomUtil.create('img', '', container);
+    img.style.width = "250px";
+    img.style.borderRadius = "10px";
+
+    const text = L.DomUtil.create('p', '', container);
+
+    const link = L.DomUtil.create('a', '', container);
+    link.href = place.url;
+    link.target = "_blank";
+    link.innerHTML = "🔗 besøk nettside";
+
+    // 🔥 viktig for layout
+    link.style.display = "block";
+    link.style.marginTop = "10px";
+
+    const btnWrap = L.DomUtil.create('div', '', container);
+    btnWrap.style.marginTop = "8px";
+
+    const btnPrev = L.DomUtil.create('button', '', btnWrap);
+    btnPrev.innerHTML = "⬅️ Forrige";
+
+    const btnNext = L.DomUtil.create('button', '', btnWrap);
+    btnNext.innerHTML = "➡️ Neste";
+
+    function render(){
+        title.innerHTML = place.name;
+        img.src = place.images[index];
+        text.innerHTML = place.text;
+    }
+
+    btnNext.addEventListener("click", function(e){
+        L.DomEvent.stopPropagation(e);
+        index = (index + 1) % place.images.length;
+        render();
+    });
+
+    btnPrev.addEventListener("click", function(e){
+        L.DomEvent.stopPropagation(e);
+        index = (index - 1 + place.images.length) % place.images.length;
+        render();
+    });
+
+    render();
+
+    return container;
+}
+
+
+
+// EKSEMPEL DATA
+
+const places = [
+{
+    name:"Sciccia",
+    lat:35.8979208830272, 
+    lng: 14.509332280539336,
+    text:"Steakhouse",
+    images:[
+        "images/sicc.jpg",
+        "images/sicc1.jpg",
+        "images/sicc2.jpg",
+        "images/sicc4.jpg"
+        
+    ]
+},
+{
+    name:"Enchanté",
+    lat:35.886784, 
+    lng:14.519097,
+    text:"Surf & Turf på Senglea",
+    images:[
+        "images/seng3.jpg",
+        
+    ]
+},{
+    name:"Marobbio",
+    lat:35.912727627500615, 
+    lng: 14.50673675875692,
+    text:"Italiensk Pizzeria",
+    images:[
+        "images/mar1.jpg",
+         ],
+    url:"https://marrobbio.com.mt/"
+},
+{
+    name:"Opa! ",
+    lat:35.90850713757381,
+    lng: 14.506370527542837,
+    text:"Mediterranean Fusion",
+    images:["images/opa1.jpg"],
+    url:"https://opamalta.com/"
+    
+},
+{
+    name:"Hammett's Gastro Bar ",
+    lat:35.90824296156132, 
+    lng:14.506889171636844,
+    text:"Asian Fusion",
+    images:[
+        "images/ham1.jpg",
+        "images/ham2.jpg"
+    ],
+    url:"https://www.hammettsgastrobar.com/"
+},
+
+{
+    name:"Sakura",
+    lat:35.91334319996892, 
+    lng:14.506560914389235,
+    text:"Div",
+    images:[
+        "images/sak1.jpg",
+        "images/sak2.jpg",
+        "images/sak3.jpg",
+        "images/sak4.jpg"
+    ],
+    url:"http://www.sakura.com.mt/"
+},
+{
+    name:"OneThai",
+    lat:35.91174465078304,
+    lng: 14.50559789674689,
+    text:"Thai",
+    images:[
+        "images/one.jpg" 
+    ], 
+    url:"http://www.onethaikitchen.com/"
+},
+{
+    name:"Delizie Siciliane",
+    lat: 35.91104514179886, 
+    lng:14.506055213381085,
+    text:"Sciciliansk café; Kaffe, Canoli, kaffe-is",
+    images:[
+        "images/sci1.jpg"
+       
+    ], 
+    url: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGcluU9J6uLJIU7JgTm_7UunStlJ6e_BYsW-2_BDfTBPjJ6yvytz3ex-nhx9TsqfXmL6DCcGqSNWIvMxgDevZQx1VSxYIeWvT6MJP_f7Gjtm-wMjxgswlPXEPO_tZ1agEduPIkBhg=w408-h543-k-no"
+},
+,
+{
+    name:"Busy Bee",
+    lat: 35.90908914462096,
+    lng: 14.50340216567324,
+    text:"café; Kaffe, Is, Kaker",
+    images:[
+        "images/busy1.jpg",
+         "images/busy2.jpg"
+       
+    ], 
+    url: "http://www.busybee.com.mt/"
+},
+{
+    name:"Distric5",
+    lat: 35.82580257039312,  
+    lng:14.530597964991953,
+    text:"Div",
+    images:[
+        "images/five.jpg"
+       
+    ], 
+    url: "https://www.facebook.com/districtfivemalta"
+},
+{
+    name:"The Wild West Bar & Grill",
+    lat:35.885368, 
+    lng:14.521426,
+    text:"Div",
+    images:[
+        "images/ww1.jpg",
+        "images/ww2.jpg",
+        "images/ww3.jpg",
+        "images/ww4.jpg",
+        "images/ww5.jpg"
+    ], 
+    url:"http://www.thewildwest.com.mt/"
+}
+];
+
+const restaurantIcon = L.icon({
+    iconUrl: 'icons/rest.png',
+    iconSize: [30,30],
+    iconAnchor: [20,40],
+    popupAnchor: [0,-40]
+});
+
+
+const beachIcon = L.icon({
+    iconUrl: 'icons/beach2.png',
+    iconSize: [50,20],
+    iconAnchor: [20,40],
+    popupAnchor: [0,-40]
+});
+
+const sightIcon = L.icon({
+    iconUrl: 'icons/bull.png',
+    iconSize: [30,30],
+    iconAnchor: [20,40],
+    popupAnchor: [0,-40]
+});
+
+// LEAFLET MAP
+
+const map = L.map('map').setView([35.8989,14.5146],11);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    attribution:'© OpenStreetMap'
+}).addTo(map);
+
+
+
+L.marker(
+    [35.89358096942252, 14.527841460697879],
+    {icon: beachIcon}
+).addTo(map)
+
+.bindPopup(`
+    <div style="width:300px">
+
+        <h3>Rinella Bay</h3>
+
+        <img src="images/pig1.jpg"
+             style="width:100%; border-radius:8px;">
+
+        <p>
+        Sandstrand .
+        </p>
+
+    </div>
+`);
+
+
+;
+
+L.marker(
+    [35.824791564291445, 14.529457345582967],
+    {icon: beachIcon}
+).addTo(map)
+.bindPopup(`
+    <div style="width:300px">
+
+        <h3>Pretty Bay</h3>
+
+        <img src="images/birgi1.jpg"
+             style="width:100%; border-radius:8px;">
+
+        <p>
+        Sandstrand med utsikt over havneterminalen.
+        </p>
+
+    </div>
+`);
+
+L.marker(
+    [35.88616264839708, 14.403220210199017],
+    {icon: sightIcon}
+).addTo(map)
+.bindPopup(`
+    <div style="width:300px">
+
+        <h3>Medina</h3>
+
+        <img src="images/med2.jpg"
+             style="width:100%; border-radius:8px;">
+
+        <p>
+        Historisk by
+        </p>
+
+    </div>
+`);
+
+
+L.marker(
+    [35.889271, 14.515604],
+    {icon: sightIcon}
+).addTo(map)
+
+.bindPopup(`
+    <div style="width:300px">
+
+        <h3>Senglea</h3>
+
+        <img src="images/seng1.jpg"
+             style="width:100%; border-radius:8px;">
+
+        <p>
+        Fint og rolig område med restauranter.
+        </p>
+
+    </div>
+`);
+
+;
+
+
+// LEGGER TIL MARKØRER
+
+places.forEach(p => {
+
+    const marker = L.marker([p.lat,p.lng]).bindTooltip(`${p.name}`, {permanent:true, direction:"right", offset:[5,5]}).addTo(map);
+
+
+
+    const popup = makePopup(p);
+
+    marker.bindPopup(popup);
+
+});
+
+</script>
+
+
+</body>
+</html>

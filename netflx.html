@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jobbklar Level Up</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,Helvetica,sans-serif;background:#0a0a0a;color:#fff}header{padding:70px 30px;background:linear-gradient(to right,rgba(0,0,0,.8),rgba(0,0,0,.2)),url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80');background-size:cover;background-position:center}h1{font-size:3.2rem;color:#00ffd0}header p{max-width:700px;margin-top:10px;color:#ddd;font-size:1.1rem}.btn{display:inline-block;margin-top:20px;background:#00ffd0;color:#000;padding:14px 24px;border-radius:999px;text-decoration:none;font-weight:bold}.wrap{padding:30px}.rowtitle{font-size:1.6rem;margin:20px 0;color:#00ffd0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}.card{background:#141414;border-radius:18px;overflow:hidden;transition:.25s;border:1px solid #222}.card:hover{transform:scale(1.03);border-color:#00ffd0}.thumb{height:150px;background:#222;display:flex;align-items:center;justify-content:center;color:#00ffd0;font-size:1.2rem}.content{padding:18px}.content h3{margin-bottom:8px}.tag{display:inline-block;margin-top:10px;background:#222;padding:6px 10px;border-radius:999px;font-size:.8rem;color:#00ffd0}.video{aspect-ratio:16/9;width:100%;border:0}.quiz{background:#111;padding:25px;border-radius:20px;margin-top:30px}.question{margin:14px 0}.question button{display:block;width:100%;margin:8px 0;padding:12px;border:none;border-radius:10px;background:#222;color:#fff;text-align:left;cursor:pointer}.question button:hover{background:#333}.result{margin-top:18px;font-size:1.2rem;color:#00ffd0;font-weight:bold}.progress{height:10px;background:#222;border-radius:999px;overflow:hidden;margin-top:10px}.bar{height:100%;width:40%;background:#00ffd0}footer{text-align:center;padding:30px;color:#888}
+</style>
+</head>
+<body>
+<header>
+<h1>JOBBKLAR // LEVEL UP</h1>
+<p>Korte moduler som gjør deg klar for praksis, jobb og fremtiden. Spill deg opp i skills.</p>
+<a href="#moduler" class="btn">Start nå</a>
+</header>
+<div class="wrap" id="moduler">
+<h2 class="rowtitle">🔥 Mest populære moduler</h2>
+<div class="grid">
+<div class="card"><div class="thumb">Soft Skills</div><div class="content"><h3>Soft Skills Basics</h3><p>Punktlighet, samarbeid, attitude.</p><span class="tag">20 min</span></div></div>
+<div class="card"><div class="thumb">Excel</div><div class="content"><h3>Excel Starter Pack</h3><p>Summering, prosent, lister.</p><span class="tag">25 min</span></div></div>
+<div class="card"><div class="thumb">PC</div><div class="content"><h3>PC Mastery</h3><p>Filer, mapper, e-post, printer.</p><span class="tag">15 min</span></div></div>
+<div class="card"><div class="thumb">CV</div><div class="content"><h3>CV + Jobb</h3><p>Lag CV og få praksisplass.</p><span class="tag">30 min</span></div></div>
+</div>
+<h2 class="rowtitle">🎬 Ukens modul</h2>
+<div class="card">
+<iframe class="video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+<div class="content"><h3>Hvordan lykkes i praksis</h3><p>Se videoen og ta quizen under.</p></div>
+</div>
+<div class="quiz">
+<h2>🎯 Quick Quiz</h2>
+<p>Hva er viktigst første dag i praksis?</p>
+<div class="question">
+<button onclick="answer(false)">Komme når du vil</button>
+<button onclick="answer(true)">Møte presis og hilse</button>
+<button onclick="answer(false)">Se på mobilen</button>
+<button onclick="answer(false)">Ikke spørre om noe</button>
+</div>
+<div class="result" id="result"></div>
+<div class="progress"><div class="bar"></div></div>
+<p style="margin-top:10px;color:#aaa">Eksempel på quiz. Jeg kan lage 10 spørsmål med score-system neste steg.</p>
+</div>
+</div>
+<footer>Jobbklar VG1 • Upgrade your future</footer>
+<script>
+function answer(correct){document.getElementById('result').innerHTML=correct?'✅ Riktig! Dette gir godt førsteinntrykk.':'❌ Ikke riktig. Prøv igjen.';}
+</script>
+</body>
+</html>

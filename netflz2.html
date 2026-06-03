@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jobbklar Level Up</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;background:#0a0a0a;color:#fff}
+header{padding:60px 20px;background:linear-gradient(to right,rgba(0,0,0,.8),rgba(0,0,0,.2)),url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80');background-size:cover}
+h1{font-size:2.5rem;color:#00ffd0}
+.btn{display:inline-block;margin-top:15px;background:#00ffd0;color:#000;padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:bold;cursor:pointer}
+.wrap{padding:20px}
+.module{background:#141414;padding:20px;margin-bottom:20px;border-radius:14px;border:1px solid #222}
+.locked{opacity:.4}
+.video{width:100%;aspect-ratio:16/9;border:0;margin-top:10px}
+.quiz{margin-top:15px}
+.question button{display:block;width:100%;margin:5px 0;padding:10px;background:#222;color:#fff;border:none;border-radius:8px;cursor:pointer}
+.question button:hover{background:#333}
+.result{margin-top:10px;color:#00ffd0}
+.progress{height:12px;background:#222;border-radius:999px;margin:20px 0}
+.bar{height:100%;width:0%;background:#00ffd0}
+footer{text-align:center;padding:20px;color:#888}
+</style>
+</head>
+<body>
+<header>
+<h1>JOBBKLAR // LEVEL UP</h1>
+<p>Lås opp moduler → bygg skills → bli jobbklar</p>
+</header>
+
+<div class="wrap">
+
+<h3>Progress</h3>
+<div class="progress"><div class="bar" id="progressBar"></div></div>
+<p id="progressText"></p>
+
+<div id="modules"></div>
+
+</div>
+<footer>Jobbklar VG1</footer>
+
+<script>
+const modules = [
+{
+name:"Soft Skills",
+video:"https://www.youtube.com/embed/dQw4w9WgXcQ",
+questions:[
+{q:"Viktig første dag?",a:["For sent","Presis","Ignorere","Mobil"],c:1},
+{q:"God kommunikasjon?",a:["Avbryte","Lytte","Ignorere","Snakke høyt"],c:1}
+]
+},
+{
+name:"Excel Basics",
+video:"https://www.youtube.com/embed/dQw4w9WgXcQ",
+questions:[
+{q:"Hva er SUM?",a:["Tekst","Regne","Bilde","Fil"],c:1},
+{q:"Prosent betyr?",a:["100","Del av 100","0","Alt"],c:1}
+]
+},
+{
+name:"Jobb og CV",
+video:"https://www.youtube.com/embed/dQw4w9WgXcQ",
+questions:[
+{q:"Hva er CV?",a:["Spill","Oversikt","Film","App"],c:1},
+{q:"Viktig i intervju?",a:["Mobil","Presis","Sen","Ignorere"],c:1}
+]
+}
+];
+
+let progress = JSON.parse(localStorage.getItem('progress')||"[]");
+
+function render(){
+const container=document.getElementById('modules');
+container.innerHTML="";
+modules.forEach((mod,i)=>{
+let unlocked = i===0 || progress[i-1];
+let div=document.createElement('div');
+div.className="module "+(unlocked?"":"locked");
+div.innerHTML=`<h2>${mod.name}</h2>`;
+
+if(unlocked){
+div.innerHTML+=`<iframe class="video" src="${mod.video}"></iframe>`;
+
+mod.questions.forEach((q,qi)=>{
+let qDiv=document.createElement('div');
+qDiv.className="question";
+qDiv.innerHTML=`<p>${q.q}</p>`;
+q.a.forEach((opt,ai)=>{
+let btn=document.createElement('button');
+btn.innerText=opt;
+btn.onclick=()=>{
+btn.style.background = ai===q.c?"green":"red";
+};
+qDiv.appendChild(btn);
+});
+div.appendChild(qDiv);
+});
+
+let btn=document.createElement('button');
+btn.className="btn";
+btn.innerText="Fullfør modul";
+btn.onclick=()=>completeModule(i);
+div.appendChild(btn);
+
+}else{
+div.innerHTML+="<p>🔒 Låst. Fullfør forrige modul.</p>";
+}
+
+container.appendChild(div);
+});
+updateProgress();
+}
+
+function completeModule(i){
+progress[i]=true;
+localStorage.setItem('progress',JSON.stringify(progress));
+render();
+}
+
+function updateProgress(){
+let done = progress.filter(x=>x).length;
+let percent = Math.round((done/modules.length)*100);
+document.getElementById('progressBar').style.width=percent+"%";
+document.getElementById('progressText').innerText = percent+"% ferdig";
+}
+
+render();
+</script>
+
+</body>
+</html>
