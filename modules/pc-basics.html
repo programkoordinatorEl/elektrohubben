@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PC Basics | Yrkesforberedt</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .shortcut-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin: 14px 0;
+  }
+  .shortcut-item {
+    background: #0d1525;
+    border: 1px solid #1f2937;
+    border-radius: 8px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .shortcut-key {
+    background: #1d4ed8;
+    color: #bfdbfe;
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .shortcut-item span { font-size: 0.88rem; color: #d1d5db; }
+
+  .do-dont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 14px 0;
+  }
+  @media (max-width: 540px) { .do-dont { grid-template-columns: 1fr; } }
+  .do-box {
+    background: #0d1f14;
+    border: 1px solid #166534;
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .do-box h4 { color: #4ade80; font-size: 0.85rem; margin-bottom: 8px; }
+  .do-box ul { padding-left: 18px; color: #d1d5db; font-size: 0.88rem; line-height: 1.7; }
+  .dont-box {
+    background: #1f0d0d;
+    border: 1px solid #7f1d1d;
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .dont-box h4 { color: #f87171; font-size: 0.85rem; margin-bottom: 8px; }
+  .dont-box ul { padding-left: 18px; color: #d1d5db; font-size: 0.88rem; line-height: 1.7; }
+</style>
+</head>
+<body>
+
+<header class="module-header">
+  <a class="back-link" href="../indexYF.html">← Tilbake til oversikt</a>
+  <h1>PC Basics</h1>
+  <div class="meta">
+    <span class="badge">Startpakke</span>
+    <span class="badge" style="background:#0f2444;color:#93c5fd;">⏱ 15 min</span>
+    <span class="badge" style="background:#0f2444;color:#93c5fd;">Modul 4 av 5</span>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <a href="../indexYF.html">Hjem</a>
+  <a href="#intro">Intro</a>
+  <a href="#passord">Passord</a>
+  <a href="#filer">Filer</a>
+  <a href="#epost">E-post</a>
+  <a href="#oppgave">Oppgave</a>
+</nav>
+
+<main class="module-content">
+
+  <div style="margin-bottom: 32px;">
+    <div class="progress-bar"><div class="progress-bar__fill" id="progressFill" style="width: 0%"></div></div>
+    <p class="progress-label" id="progressLabel">Ikke startet</p>
+  </div>
+
+  <!-- Intro -->
+  <section class="module-section" id="intro">
+    <h2>PC-ferdigheter på jobb</h2>
+    <p>
+      De fleste bruker PC til daglig – men det er stor forskjell på å surfe på nettet
+      hjemme og å bruke en PC profesjonelt på jobb eller i praksis.
+    </p>
+    <p>
+      I denne modulen går vi gjennom det du faktisk trenger å beherske: passord og sikkerhet,
+      filhåndtering, e-post og de viktigste hurtigtastene som sparer tid hver dag.
+    </p>
+  </section>
+
+  <!-- Passord og sikkerhet -->
+  <section class="module-section" id="passord">
+    <h2>Passord og sikkerhet</h2>
+
+    <h3>Hva gjør et godt passord?</h3>
+    <ul>
+      <li>Minst 12 tegn – gjerne 16+</li>
+      <li>Blanding av store/små bokstaver, tall og spesialtegn</li>
+      <li>Ikke navn, fødselsdato eller ordet "passord"</li>
+      <li>Unikt for hvert nettsted – ikke gjenbruk passord</li>
+    </ul>
+
+    <div class="tip-box">
+      <strong>Triks:</strong> Bruk en passordsetning – f.eks. tre tilfeldige ord med tall og
+      tegn imellom: <code style="color:#22d3ee;background:#0d1f2a;padding:2px 6px;border-radius:4px;">Hund!Sykkel42Eple</code>.
+      Lett å huske, vanskelig å knekke.
+    </div>
+
+    <div class="do-dont">
+      <div class="do-box">
+        <h4>✓ Gjør dette</h4>
+        <ul>
+          <li>Lås skjermen når du går fra PC-en (Windows+L)</li>
+          <li>Logg ut av delte PCer</li>
+          <li>Bruk tofaktorautentisering (2FA) der det er mulig</li>
+          <li>Oppdater programvare jevnlig</li>
+        </ul>
+      </div>
+      <div class="dont-box">
+        <h4>✗ Unngå dette</h4>
+        <ul>
+          <li>Del aldri passord med andre</li>
+          <li>Ikke skriv passord på lapper</li>
+          <li>Ikke klikk på mistenkelige lenker i e-post</li>
+          <li>Ikke bruk jobb-PC til private innlogginger</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filer og mapper -->
+  <section class="module-section" id="filer">
+    <h2>Filhåndtering</h2>
+
+    <h3>Finn frem i Filutforsker (Windows)</h3>
+    <ol class="step-list">
+      <li>Trykk <strong style="color:#e2e8f0;">Windows + E</strong> for å åpne Filutforsker</li>
+      <li>Naviger til mappen du vil jobbe i</li>
+      <li>Høyreklikk for å opprette ny mappe eller ny fil</li>
+    </ol>
+
+    <h3>Gi filer fornuftige navn</h3>
+    <p>Et filnavn skal si hva filen inneholder – uten å åpne den.</p>
+    <div class="do-dont">
+      <div class="do-box">
+        <h4>✓ Gode navn</h4>
+        <ul>
+          <li>CV_OlaNordmann_2024.pdf</li>
+          <li>Rapport_HMS_uke42.docx</li>
+          <li>Budsjett_mars_2024.xlsx</li>
+        </ul>
+      </div>
+      <div class="dont-box">
+        <h4>✗ Dårlige navn</h4>
+        <ul>
+          <li>Dokument1.docx</li>
+          <li>fil_kopi_final2.pdf</li>
+          <li>asdfgh.xlsx</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Kopier, flytt og slett</h3>
+    <div class="shortcut-grid">
+      <div class="shortcut-item"><span class="shortcut-key">Ctrl + C</span><span>Kopier fil</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">Ctrl + X</span><span>Klipp ut (flytt)</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">Ctrl + V</span><span>Lim inn</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">Delete</span><span>Flytt til papirkurv</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">Shift+Delete</span><span>Slett permanent</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">Ctrl + Z</span><span>Angre siste handling</span></div>
+    </div>
+  </section>
+
+  <!-- E-post -->
+  <section class="module-section" id="epost">
+    <h2>E-post på en profesjonell måte</h2>
+    <p>
+      E-post til en lærer, arbeidsgiver eller praksisplass er ikke det samme som en melding
+      til venner. Her er de viktigste reglene:
+    </p>
+
+    <h3>Struktur på en profesjonell e-post</h3>
+    <ol class="step-list">
+      <li><strong style="color:#e2e8f0;">Emne:</strong> Kort og tydelig – f.eks. "Spørsmål om praksisplass – Ola Nordmann"</li>
+      <li><strong style="color:#e2e8f0;">Hilsen:</strong> Start med "Hei [navn]," eller "Hei,"</li>
+      <li><strong style="color:#e2e8f0;">Innhold:</strong> Én ting per e-post. Forklar hva du trenger tydelig og kortfattet.</li>
+      <li><strong style="color:#e2e8f0;">Avslutning:</strong> "Med vennlig hilsen" + fullt navn</li>
+      <li><strong style="color:#e2e8f0;">Les korrektur</strong> før du trykker Send</li>
+    </ol>
+
+    <div class="tip-box">
+      <strong>Printer:</strong> Sjekk at skriveren er koblet til og har papir.
+      Skriv ut med <strong style="color:#e2e8f0;">Ctrl+P</strong> – se forhåndsvisning før du
+      sender til utskrift. Velg riktig skriver i nedtrekksmenyen.
+    </div>
+  </section>
+
+  <!-- Hurtigtaster -->
+  <section class="module-section">
+    <h2>Viktige hurtigtaster – Windows</h2>
+    <div class="shortcut-grid">
+      <div class="shortcut-item"><span class="shortcut-key">Windows + L</span><span>Lås skjerm</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">Windows + E</span><span>Filutforsker</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">Windows + D</span><span>Vis skrivebordet</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">Alt + Tab</span><span>Bytt vindu</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">Ctrl + Alt + Del</span><span>Oppgavebehandling</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">PrtScn</span><span>Ta skjermbilde</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">Ctrl + S</span><span>Lagre dokument</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">Ctrl + Z</span><span>Angre</span></div>
+    </div>
+  </section>
+
+  <!-- Oppgave -->
+  <section class="module-section" id="oppgave">
+    <h2>Praktisk oppgave</h2>
+
+    <div class="task-box">
+      <h3>💻 Oppgave: Rydd opp og skriv e-post</h3>
+      <p>
+        1. Finn tre filer på PCen din med dårlige navn og gi dem bedre navn.<br>
+        2. Skriv en øvings-e-post til læreren din der du spør om noe faglig. Bruk riktig
+        struktur med emne, hilsen, innhold og avslutning.
+      </p>
+    </div>
+
+    <div class="task-box" style="margin-top:14px;">
+      <h3>🎯 Refleksjon</h3>
+      <p>
+        Hvilke hurtigtaster brukte du ikke fra før? Er det noen PC-vaner du vil endre?
+        Hva er viktigst å passe på når du bruker en jobb-PC?
+      </p>
+    </div>
+  </section>
+
+  <!-- Oppsummering -->
+  <section class="module-section">
+    <h2>Oppsummering – ta med deg dette</h2>
+    <ol class="step-list">
+      <li>Bruk lange, unike passord – og lås alltid skjermen når du forlater PC-en.</li>
+      <li>Gi filer beskrivende navn – ikke "Dokument1".</li>
+      <li>Lær hurtigtastene: de sparer mye tid over tid.</li>
+      <li>Profesjonell e-post har emne, høflig hilsen, klart innhold og fullt navn.</li>
+      <li>Logg alltid ut av delte maskiner etter bruk.</li>
+    </ol>
+  </section>
+
+  <button class="done-btn" id="doneBtn" onclick="markDone()">✓ Merk som fullført</button>
+
+  <div class="module-nav">
+    <a class="button button--secondary" href="basic-word.html">← Basic Word</a>
+    <a class="button" href="mappestruktur.html">Neste: Mappestruktur →</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>Yrkesforberedt • YFF VG1</p>
+  <p class="small">Bygg ferdigheter som teller.</p>
+</footer>
+
+<script>
+  const MODULE_KEY = 'modul-pc-basics';
+  function updateProgress() {
+    const done = localStorage.getItem(MODULE_KEY) === 'done';
+    document.getElementById('progressFill').style.width = done ? '100%' : '40%';
+    document.getElementById('progressLabel').textContent = done ? 'Fullført ✓' : 'I gang...';
+    if (done) {
+      document.getElementById('progressLabel').style.color = '#4ade80';
+      document.getElementById('doneBtn').textContent = '✓ Fullført';
+      document.getElementById('doneBtn').classList.add('done');
+    }
+  }
+  function markDone() {
+    localStorage.setItem(MODULE_KEY, 'done');
+    updateProgress();
+  }
+  if (!localStorage.getItem(MODULE_KEY)) localStorage.setItem(MODULE_KEY, 'started');
+  updateProgress();
+</script>
+</body>
+</html>

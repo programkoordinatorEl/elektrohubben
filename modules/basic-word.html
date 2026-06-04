@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic Word | Yrkesforberedt</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .shortcut-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin: 14px 0;
+  }
+  .shortcut-item {
+    background: #0d1525;
+    border: 1px solid #1f2937;
+    border-radius: 8px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .shortcut-key {
+    background: #1d4ed8;
+    color: #bfdbfe;
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .shortcut-item span {
+    font-size: 0.88rem;
+    color: #d1d5db;
+  }
+  .cv-preview {
+    background: #fff;
+    color: #1a1a1a;
+    border-radius: 10px;
+    padding: 28px 32px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  .cv-preview h2 { font-size: 1.3rem; color: #1d4ed8; margin-bottom: 2px; }
+  .cv-preview h3 { font-size: 0.85rem; color: #555; font-weight: 400; margin-bottom: 14px; }
+  .cv-preview h4 { font-size: 0.85rem; color: #1d4ed8; text-transform: uppercase; letter-spacing: 0.08em; margin: 14px 0 6px; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; }
+  .cv-preview p, .cv-preview li { color: #374151; margin: 2px 0; }
+  .cv-preview ul { padding-left: 18px; }
+</style>
+</head>
+<body>
+
+<header class="module-header">
+  <a class="back-link" href="../indexYF.html">← Tilbake til oversikt</a>
+  <h1>Basic Word</h1>
+  <div class="meta">
+    <span class="badge">Startpakke</span>
+    <span class="badge" style="background:#0f2444;color:#93c5fd;">⏱ 20 min</span>
+    <span class="badge" style="background:#0f2444;color:#93c5fd;">Modul 3 av 5</span>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <a href="../indexYF.html">Hjem</a>
+  <a href="#intro">Intro</a>
+  <a href="#struktur">Struktur</a>
+  <a href="#cv">CV-mal</a>
+  <a href="#oppgave">Oppgave</a>
+</nav>
+
+<main class="module-content">
+
+  <div style="margin-bottom: 32px;">
+    <div class="progress-bar"><div class="progress-bar__fill" id="progressFill" style="width: 0%"></div></div>
+    <p class="progress-label" id="progressLabel">Ikke startet</p>
+  </div>
+
+  <!-- Intro -->
+  <section class="module-section" id="intro">
+    <h2>Hvorfor lære Word?</h2>
+    <p>
+      Microsoft Word (og Google Docs) brukes til å skrive rapporter, søknader, CV-er,
+      protokoller og brev – på skolen, i praksis og i arbeidslivet.
+    </p>
+    <p>
+      Et ryddig, profesjonelt dokument gjør et godt førsteinntrykk. Det handler ikke om å
+      pynte på innholdet – det handler om at leseren enkelt finner det de leter etter.
+    </p>
+    <div class="tip-box">
+      <strong>Tips:</strong> Åpne Word eller Google Docs og prøv tingene mens du leser –
+      da husker du dem mye bedre enn å bare lese.
+    </div>
+  </section>
+
+  <!-- Dokumentstruktur -->
+  <section class="module-section" id="struktur">
+    <h2>Struktur og formatering</h2>
+
+    <h3>Bruk overskrifter – ikke bare stor skrift</h3>
+    <p>
+      Mange skriver store, fete titler manuelt – det er feil vei å gå. Bruk de innebygde
+      overskriftsstilene (Overskrift 1, Overskrift 2 osv.) i stedet.
+    </p>
+    <ul>
+      <li>Gjør det enkelt å navigere i lange dokumenter</li>
+      <li>Lar deg generere innholdsfortegnelse automatisk</li>
+      <li>Ser konsekvent og profesjonelt ut</li>
+    </ul>
+
+    <h3>Linjestruktur og avsnitt</h3>
+    <ul>
+      <li>Bruk <strong style="color:#e2e8f0;">Enter</strong> for nytt avsnitt, ikke for å lage luft</li>
+      <li>Sett avstandsinnstillingene under <em>Avsnitt</em> for mellomrom over/under</li>
+      <li>Unngå dobbel Enter mellom alle linjer – det gir uryddig layout</li>
+    </ul>
+
+    <h3>Nyttige hurtigtaster</h3>
+    <div class="shortcut-grid">
+      <div class="shortcut-item"><span class="shortcut-key">Ctrl + S</span><span>Lagre</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">Ctrl + Z</span><span>Angre</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">Ctrl + B</span><span>Fet tekst</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">Ctrl + I</span><span>Kursiv</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">Ctrl + U</span><span>Understrek</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">Ctrl + C / V</span><span>Kopier / Lim inn</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">Ctrl + P</span><span>Skriv ut</span></div>
+      <div class="shortcut-item"><span class="shortcut-key">Ctrl + A</span><span>Merk alt</span></div>
+    </div>
+
+    <h3>Lagre som PDF</h3>
+    <p>
+      Når du sender en CV eller søknad, skal den alltid lagres som PDF – ikke som .docx.
+      Da ser dokumentet likt ut på alle datamaskiner og mobiler.
+    </p>
+    <ol class="step-list">
+      <li>Klikk <em>Fil</em> → <em>Lagre som</em></li>
+      <li>Velg <em>PDF</em> i nedtrekksmenyen for filtype</li>
+      <li>Gi filen et fornuftig navn, f.eks. <code style="color:#22d3ee;background:#0d1f2a;padding:2px 6px;border-radius:4px;">CV_Fornavn_Etternavn.pdf</code></li>
+    </ol>
+  </section>
+
+  <!-- Tabeller -->
+  <section class="module-section">
+    <h2>Tabeller i Word</h2>
+    <p>
+      Tabeller er nyttige for å presentere informasjon ryddig – f.eks. i en CV, en rapport
+      eller et timeregistreringsskjema.
+    </p>
+    <ol class="step-list">
+      <li>Gå til <em>Sett inn</em> → <em>Tabell</em></li>
+      <li>Velg antall kolonner og rader du trenger</li>
+      <li>Klikk i en celle og begynn å skrive</li>
+      <li>Trykk <strong style="color:#e2e8f0;">Tab</strong> for å hoppe til neste celle – eller lage ny rad automatisk</li>
+    </ol>
+    <div class="tip-box">
+      <strong>Tips:</strong> Høyreklikk på tabellen for å legge til eller slette rader og kolonner,
+      eller for å endre cellebakgrunnsfarge.
+    </div>
+  </section>
+
+  <!-- CV-mal -->
+  <section class="module-section" id="cv">
+    <h2>Enkel CV-mal</h2>
+    <p>Slik kan en enkel og ryddig CV se ut. Du kan bruke denne som utgangspunkt i Word:</p>
+
+    <div class="cv-preview">
+      <h2>Ola Nordmann</h2>
+      <h3>ola.nordmann@epost.no &nbsp;|&nbsp; 123 45 678 &nbsp;|&nbsp; Oslo</h3>
+
+      <h4>Om meg</h4>
+      <p>Elev på VG1 Elektrofag. Punktlig, lærevillig og glad i å jobbe i team. Søker praksisplass for å få erfaring i faget.</p>
+
+      <h4>Utdanning</h4>
+      <p><strong>Videregående skole</strong> – Elektrofag, VG1 &nbsp;|&nbsp; 2024–nå</p>
+      <p><strong>Ungdomsskole</strong> – Osloskolen &nbsp;|&nbsp; 2021–2024</p>
+
+      <h4>Erfaring</h4>
+      <p><strong>Frivillig arbeid</strong> – Lokalt idrettslag &nbsp;|&nbsp; 2022–nå</p>
+      <ul><li>Hjelper til på treninger og arrangement</li></ul>
+
+      <h4>Ferdigheter</h4>
+      <ul>
+        <li>Microsoft Word og Excel (grunnleggende)</li>
+        <li>Norsk (morsmål), Engelsk (godt muntlig og skriftlig)</li>
+        <li>Førerkort klasse AM (moped)</li>
+      </ul>
+    </div>
+
+    <div class="tip-box" style="margin-top:16px;">
+      <strong>Huskeregel:</strong> CV-en skal være maksimalt én side for deg som er ny i arbeidslivet.
+      Hold den kort, konkret og uten skrivefeil.
+    </div>
+  </section>
+
+  <!-- Oppgave -->
+  <section class="module-section" id="oppgave">
+    <h2>Praktisk oppgave</h2>
+
+    <div class="task-box">
+      <h3>📄 Oppgave: Lag din egen CV</h3>
+      <p>
+        Åpne Word og lag en enkel CV basert på malen over. Bytt ut informasjonen med din
+        egen. Bruk overskriftsstiler for seksjonene, og lagre til slutt som PDF med navnet
+        <code style="color:#93c5fd;">CV_DittNavn.pdf</code>.
+      </p>
+    </div>
+
+    <div class="task-box" style="margin-top:14px;">
+      <h3>🎯 Refleksjon</h3>
+      <p>
+        Hva synes du var vanskeligst å formatere? Var det noe du ikke visste fra før?
+        Hva vil du bruke Word til i praksisperioden?
+      </p>
+    </div>
+  </section>
+
+  <!-- Oppsummering -->
+  <section class="module-section">
+    <h2>Oppsummering – ta med deg dette</h2>
+    <ol class="step-list">
+      <li>Bruk overskriftsstiler (Overskrift 1, 2 osv.) – ikke manuell formatering.</li>
+      <li>Lær de viktigste hurtigtastene: Ctrl+S, Ctrl+Z, Ctrl+B, Ctrl+P.</li>
+      <li>Send alltid CV og søknader som PDF – aldri som .docx.</li>
+      <li>Tabeller gjør informasjon ryddig og lettleselig.</li>
+      <li>En god CV er kort, konkret og uten skrivefeil.</li>
+    </ol>
+  </section>
+
+  <button class="done-btn" id="doneBtn" onclick="markDone()">✓ Merk som fullført</button>
+
+  <div class="module-nav">
+    <a class="button button--secondary" href="basic-excel.html">← Basic Excel</a>
+    <a class="button" href="pc-basics.html">Neste: PC Basics →</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>Yrkesforberedt • YFF VG1</p>
+  <p class="small">Bygg ferdigheter som teller.</p>
+</footer>
+
+<script>
+  const MODULE_KEY = 'modul-basic-word';
+  function updateProgress() {
+    const done = localStorage.getItem(MODULE_KEY) === 'done';
+    document.getElementById('progressFill').style.width = done ? '100%' : '40%';
+    document.getElementById('progressLabel').textContent = done ? 'Fullført ✓' : 'I gang...';
+    if (done) {
+      document.getElementById('progressLabel').style.color = '#4ade80';
+      document.getElementById('doneBtn').textContent = '✓ Fullført';
+      document.getElementById('doneBtn').classList.add('done');
+    }
+  }
+  function markDone() {
+    localStorage.setItem(MODULE_KEY, 'done');
+    updateProgress();
+  }
+  if (!localStorage.getItem(MODULE_KEY)) localStorage.setItem(MODULE_KEY, 'started');
+  updateProgress();
+</script>
+</body>
+</html>

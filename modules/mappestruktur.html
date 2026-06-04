@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mappestruktur | Yrkesforberedt</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .folder-tree {
+    background: #0d1525;
+    border: 1px solid #1f2937;
+    border-radius: 10px;
+    padding: 20px 24px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 2;
+    color: #d1d5db;
+    margin: 14px 0;
+  }
+  .folder-tree .folder { color: #22d3ee; font-weight: 700; }
+  .folder-tree .file   { color: #94a3b8; }
+  .folder-tree .note   { color: #4ade80; font-style: italic; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; }
+
+  .do-dont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 14px 0;
+  }
+  @media (max-width: 540px) { .do-dont { grid-template-columns: 1fr; } }
+  .do-box {
+    background: #0d1f14;
+    border: 1px solid #166534;
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .do-box h4 { color: #4ade80; font-size: 0.85rem; margin-bottom: 8px; }
+  .do-box ul { padding-left: 18px; color: #d1d5db; font-size: 0.88rem; line-height: 1.7; }
+  .dont-box {
+    background: #1f0d0d;
+    border: 1px solid #7f1d1d;
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .dont-box h4 { color: #f87171; font-size: 0.85rem; margin-bottom: 8px; }
+  .dont-box ul { padding-left: 18px; color: #d1d5db; font-size: 0.88rem; line-height: 1.7; }
+</style>
+</head>
+<body>
+
+<header class="module-header">
+  <a class="back-link" href="../indexYF.html">← Tilbake til oversikt</a>
+  <h1>Mappestruktur</h1>
+  <div class="meta">
+    <span class="badge">Startpakke</span>
+    <span class="badge" style="background:#0f2444;color:#93c5fd;">⏱ 10 min</span>
+    <span class="badge" style="background:#0f2444;color:#93c5fd;">Modul 5 av 5</span>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <a href="../indexYF.html">Hjem</a>
+  <a href="#intro">Intro</a>
+  <a href="#struktur">Struktur</a>
+  <a href="#navn">Filnavn</a>
+  <a href="#oppgave">Oppgave</a>
+</nav>
+
+<main class="module-content">
+
+  <div style="margin-bottom: 32px;">
+    <div class="progress-bar"><div class="progress-bar__fill" id="progressFill" style="width: 0%"></div></div>
+    <p class="progress-label" id="progressLabel">Ikke startet</p>
+  </div>
+
+  <!-- Intro -->
+  <section class="module-section" id="intro">
+    <h2>Hvorfor er mappestruktur viktig?</h2>
+    <p>
+      En ryddig mappestruktur er som et godt arkivsystem: du finner alltid det du leter etter
+      på sekunder, i stedet for å lete i 10 minutter gjennom hundrevis av filer.
+    </p>
+    <p>
+      I arbeidslivet er dette særlig viktig. Kolleger skal kunne ta over arbeidet ditt,
+      filer skal deles med kunder, og dokumenter skal gjenfinnbart om et år.
+    </p>
+    <div class="tip-box">
+      <strong>Regel #1:</strong> Alltid én plass per type fil. Ikke spre relaterte filer
+      over hele PCen.
+    </div>
+  </section>
+
+  <!-- Mappestruktur -->
+  <section class="module-section" id="struktur">
+    <h2>En god grunnstruktur</h2>
+    <p>Her er et eksempel på hvordan du kan organisere mappen din for skoleåret:</p>
+
+    <div class="folder-tree">
+      <span class="folder">📁 Skole_2024-2025/</span><br>
+      &nbsp;&nbsp;<span class="folder">📁 Fag/</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="folder">📁 Elektrofag/</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="file">📄 Rapport_sikkerhet_uke38.docx</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="file">📄 Oppgave_krets_1.pdf</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="folder">📁 Norsk/</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="file">📄 Stil_uke40.docx</span><br>
+      &nbsp;&nbsp;<span class="folder">📁 YFF_Praksis/</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="file">📄 CV_OlaNordmann.pdf</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="file">📄 Soknad_ElektroAS.pdf</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="file">📄 Praksislogg_uke42.docx</span><br>
+      &nbsp;&nbsp;<span class="folder">📁 Ressurser/</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="file">📄 Pensumliste.pdf</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="file">📄 Timeplan_host2024.pdf</span>
+    </div>
+
+    <div class="tip-box">
+      <strong>Prinsipp:</strong> Start bredt øverst (skoleår / prosjekt), og bli mer spesifikk
+      lenger ned. Maks 3–4 nivåer dypt – dypere enn det er tungvint å navigere.
+    </div>
+
+    <h3>For praksisplass eller jobb</h3>
+    <p>Mange bedrifter har egne systemer, men en personlig arbeidsmappe kan se slik ut:</p>
+
+    <div class="folder-tree">
+      <span class="folder">📁 Praksis_ElektroAS/</span><br>
+      &nbsp;&nbsp;<span class="folder">📁 Dokumenter/</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="file">📄 Arbeidsavtale.pdf</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="file">📄 HMS_opplæring.pdf</span><br>
+      &nbsp;&nbsp;<span class="folder">📁 Logg/</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="file">📄 Logg_uke01.docx</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="file">📄 Logg_uke02.docx</span><br>
+      &nbsp;&nbsp;<span class="folder">📁 Bilder/</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="file">🖼 Prosjekt_sikringsskap_01.jpg</span>
+    </div>
+  </section>
+
+  <!-- Filnavn -->
+  <section class="module-section" id="navn">
+    <h2>Gode filnavnvaner</h2>
+
+    <h3>Regler for filnavn</h3>
+    <ul>
+      <li>Bruk understrek <code style="color:#22d3ee;background:#0d1f2a;padding:2px 6px;border-radius:4px;">_</code> eller bindestrek <code style="color:#22d3ee;background:#0d1f2a;padding:2px 6px;border-radius:4px;">-</code> i stedet for mellomrom</li>
+      <li>Unngå æ, ø og å i filnavn – de kan skape problemer i noen systemer</li>
+      <li>Ta med dato eller ukenummer for filer du oppdaterer ofte</li>
+      <li>Ikke bruk: <code style="color:#f87171;background:#1f0d0d;padding:2px 6px;border-radius:4px;">/ \ : * ? " &lt; &gt; |</code> – disse er ulovlige tegn i filnavn</li>
+    </ul>
+
+    <div class="do-dont">
+      <div class="do-box">
+        <h4>✓ Gode filnavn</h4>
+        <ul>
+          <li>Rapport_HMS_2024-10-15.docx</li>
+          <li>CV_OlaNordmann_v2.pdf</li>
+          <li>Logg_uke38_praksis.docx</li>
+          <li>Budsjett_Q1_2025.xlsx</li>
+        </ul>
+      </div>
+      <div class="dont-box">
+        <h4>✗ Dårlige filnavn</h4>
+        <ul>
+          <li>Dokument (2) kopi final.docx</li>
+          <li>ny rapport æøå!!.pdf</li>
+          <li>asdf.docx</li>
+          <li>UNTITLED-1.pdf</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Versjonshåndtering</h3>
+    <p>
+      Når du jobber med et dokument over tid og vil beholde tidligere versjoner, legg til
+      versjonsnummer eller dato i filnavnet:
+    </p>
+    <div class="folder-tree">
+      <span class="file">📄 Rapport_v1.docx</span>&nbsp;&nbsp;&nbsp;<span class="note">← første utkast</span><br>
+      <span class="file">📄 Rapport_v2.docx</span>&nbsp;&nbsp;&nbsp;<span class="note">← etter tilbakemelding</span><br>
+      <span class="file">📄 Rapport_v3_FINAL.docx</span>&nbsp;&nbsp;&nbsp;<span class="note">← innleveringsversjon</span>
+    </div>
+  </section>
+
+  <!-- Backup -->
+  <section class="module-section">
+    <h2>Ta backup – ikke mist arbeidet ditt</h2>
+    <p>
+      Harddisker kan krasje, PC-er kan bli stjålet eller ødelagt. Viktige filer bør alltid
+      finnes på minst to steder.
+    </p>
+
+    <h3>Enkle backup-løsninger</h3>
+    <ol class="step-list">
+      <li><strong style="color:#e2e8f0;">OneDrive / Google Drive:</strong> Koble til og la filene synkroniseres automatisk – da er de alltid i skyen</li>
+      <li><strong style="color:#e2e8f0;">USB-minnepinne:</strong> Kopier viktige filer til en minnepinne jevnlig</li>
+      <li><strong style="color:#e2e8f0;">E-post til deg selv:</strong> Send ferdig dokumenter til deg selv som vedlegg</li>
+    </ol>
+
+    <div class="tip-box">
+      <strong>Huskeregel:</strong> 3-2-1 regelen: 3 kopier, på 2 forskjellige medier, 1 utenfor hjemmet (f.eks. i skyen).
+    </div>
+  </section>
+
+  <!-- Oppgave -->
+  <section class="module-section" id="oppgave">
+    <h2>Praktisk oppgave</h2>
+
+    <div class="task-box">
+      <h3>📁 Oppgave: Bygg din mappestruktur</h3>
+      <p>
+        Opprett en mappestruktur for skoleåret ditt på PCen. Bruk eksempelet over som
+        utgangspunkt, men tilpass det til fagene og aktivitetene du har. Flytt minst 5
+        eksisterende filer inn i riktige mapper og gi dem bedre navn hvis nødvendig.
+      </p>
+    </div>
+
+    <div class="task-box" style="margin-top:14px;">
+      <h3>🎯 Refleksjon</h3>
+      <p>
+        Hvordan ser din nåværende filstruktur ut? Hva er det vanskeligste med å holde det
+        ryddig over tid? Hva skal du gjøre annerledes fremover?
+      </p>
+    </div>
+  </section>
+
+  <!-- Oppsummering -->
+  <section class="module-section">
+    <h2>Oppsummering – ta med deg dette</h2>
+    <ol class="step-list">
+      <li>Én plass per type fil – ikke spre relaterte dokumenter rundt om kring.</li>
+      <li>Maks 3–4 mappenivåer – dypere er tungvint i hverdagen.</li>
+      <li>Bruk beskrivende filnavn med dato eller versjonsnummer der det passer.</li>
+      <li>Unngå mellomrom, æøå og spesialtegn i filnavn.</li>
+      <li>Ta backup – minst én kopi i skyen (OneDrive, Google Drive).</li>
+    </ol>
+  </section>
+
+  <button class="done-btn" id="doneBtn" onclick="markDone()">✓ Merk som fullført</button>
+
+  <div class="module-nav">
+    <a class="button button--secondary" href="pc-basics.html">← PC Basics</a>
+    <a class="button" href="../indexYF.html">Tilbake til oversikt →</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>Yrkesforberedt • YFF VG1</p>
+  <p class="small">Bygg ferdigheter som teller.</p>
+</footer>
+
+<script>
+  const MODULE_KEY = 'modul-mappestruktur';
+  function updateProgress() {
+    const done = localStorage.getItem(MODULE_KEY) === 'done';
+    document.getElementById('progressFill').style.width = done ? '100%' : '40%';
+    document.getElementById('progressLabel').textContent = done ? 'Fullført ✓' : 'I gang...';
+    if (done) {
+      document.getElementById('progressLabel').style.color = '#4ade80';
+      document.getElementById('doneBtn').textContent = '✓ Fullført';
+      document.getElementById('doneBtn').classList.add('done');
+    }
+  }
+  function markDone() {
+    localStorage.setItem(MODULE_KEY, 'done');
+    updateProgress();
+  }
+  if (!localStorage.getItem(MODULE_KEY)) localStorage.setItem(MODULE_KEY, 'started');
+  updateProgress();
+</script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic Excel | Yrkesforberedt</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .formula-box {
+    background: #0d1f14;
+    border: 1px solid #166534;
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    color: #4ade80;
+    margin: 12px 0;
+    letter-spacing: 0.03em;
+  }
+  .formula-box span {
+    color: #93c5fd;
+  }
+  .excel-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    margin: 14px 0;
+  }
+  .excel-table th {
+    background: #1d4ed8;
+    color: #bfdbfe;
+    padding: 8px 12px;
+    text-align: left;
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+  }
+  .excel-table td {
+    background: #111827;
+    border: 1px solid #1f2937;
+    padding: 8px 12px;
+    color: #d1d5db;
+  }
+  .excel-table tr:nth-child(even) td {
+    background: #1a2235;
+  }
+</style>
+</head>
+<body>
+
+<header class="module-header">
+  <a class="back-link" href="../indexYF.html">← Tilbake til oversikt</a>
+  <h1>Basic Excel</h1>
+  <div class="meta">
+    <span class="badge">Startpakke</span>
+    <span class="badge" style="background:#0f2444;color:#93c5fd;">⏱ 25 min</span>
+    <span class="badge" style="background:#0f2444;color:#93c5fd;">Modul 2 av 5</span>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <a href="../indexYF.html">Hjem</a>
+  <a href="#intro">Intro</a>
+  <a href="#formler">Formler</a>
+  <a href="#prosent">Prosent</a>
+  <a href="#oppgave">Oppgave</a>
+</nav>
+
+<main class="module-content">
+
+  <div style="margin-bottom: 32px;">
+    <div class="progress-bar"><div class="progress-bar__fill" id="progressFill" style="width: 0%"></div></div>
+    <p class="progress-label" id="progressLabel">Ikke startet</p>
+  </div>
+
+  <!-- Intro -->
+  <section class="module-section" id="intro">
+    <h2>Hvorfor lære Excel?</h2>
+    <p>
+      Excel er et av de mest brukte verktøyene i arbeidslivet. Det brukes til å lage lister,
+      budsjetter, timeregistrering, rapporter og mye mer – i nesten alle bransjer.
+    </p>
+    <p>
+      Du trenger ikke bli ekspert. Men hvis du kan de grunnleggende formlene og vet hvordan
+      du holder et regneark ryddig, er du allerede foran mange andre.
+    </p>
+    <div class="tip-box">
+      <strong>Tips:</strong> Åpne Excel eller Google Sheets ved siden av og prøv formlene
+      mens du leser – da husker du dem mye bedre.
+    </div>
+  </section>
+
+  <!-- Grunnleggende formler -->
+  <section class="module-section" id="formler">
+    <h2>Grunnleggende formler</h2>
+    <p>Alle formler i Excel starter med <code style="color:#22d3ee;background:#0d1f2a;padding:2px 6px;border-radius:4px;">=</code> (likhetstegn). Her er de du trenger å kunne:</p>
+
+    <h3>SUM – legg sammen tall</h3>
+    <p>Brukes til å summere en rekke tall i en kolonne eller rad.</p>
+    <div class="formula-box">=SUM(<span>B2:B10</span>)</div>
+    <p>Dette legger sammen alle tall fra celle B2 til B10.</p>
+
+    <h3>GJENNOMSNITT – finn snittet</h3>
+    <p>Beregner gjennomsnittet av et område med tall.</p>
+    <div class="formula-box">=GJENNOMSNITT(<span>B2:B10</span>)</div>
+
+    <h3>MIN og MAKS</h3>
+    <p>Finn det laveste eller høyeste tallet i et område.</p>
+    <div class="formula-box">=MIN(<span>B2:B10</span>)&nbsp;&nbsp;&nbsp;=MAKS(<span>B2:B10</span>)</div>
+
+    <h3>ANTALL – tell celler med tall</h3>
+    <div class="formula-box">=ANTALL(<span>B2:B10</span>)</div>
+
+    <div class="tip-box">
+      <strong>Hurtigtips:</strong> Merk et område med tall og se nederst i Excel – der vises
+      SUM, GJENNOMSNITT og ANTALL automatisk uten at du trenger å skrive noen formel.
+    </div>
+  </section>
+
+  <!-- Prosent -->
+  <section class="module-section" id="prosent">
+    <h2>Jobbe med prosent</h2>
+    <p>Prosent dukker opp overalt: rabatter, moms, lønnsøkning, statistikk. Her er de tre vanligste situasjonene:</p>
+
+    <h3>Beregn prosent av et tall</h3>
+    <p>Hva er 25 % av 800 kr?</p>
+    <div class="formula-box">=<span>800</span> * 25%&nbsp;&nbsp;&nbsp;<span style="color:#94a3b8;">→ 200</span></div>
+
+    <h3>Legg til moms (25 %)</h3>
+    <p>Pris uten moms er i celle B2. Pris med moms:</p>
+    <div class="formula-box">=<span>B2</span> * 1,25</div>
+
+    <h3>Finn prosentvis endring</h3>
+    <p>Gammel pris i B2, ny pris i C2. Endring i prosent:</p>
+    <div class="formula-box">=(<span>C2</span>-<span>B2</span>)/<span>B2</span></div>
+    <p>Formater cellen som prosent (%-knappen i verktøylinjen) for å vise resultatet som f.eks. 15 %.</p>
+
+    <h3>Eksempel: enkel budsjettliste</h3>
+    <table class="excel-table">
+      <thead><tr><th>Post</th><th>Beløp (kr)</th><th>% av total</th></tr></thead>
+      <tbody>
+        <tr><td>Husleie</td><td>6 500</td><td>=B2/SUM($B$2:$B$5)</td></tr>
+        <tr><td>Mat</td><td>3 200</td><td>=B3/SUM($B$2:$B$5)</td></tr>
+        <tr><td>Transport</td><td>1 100</td><td>=B4/SUM($B$2:$B$5)</td></tr>
+        <tr><td>Fritid</td><td>900</td><td>=B5/SUM($B$2:$B$5)</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.85rem;color:#94a3b8;">Formater kolonne C som prosent – da ser du fordelingen med én gang.</p>
+  </section>
+
+  <!-- Ryddige lister -->
+  <section class="module-section">
+    <h2>Ryddige lister og god struktur</h2>
+
+    <h3>Frys øverste rad</h3>
+    <p>Når listen er lang, er det praktisk å låse overskriftsraden så den alltid er synlig.</p>
+    <ol class="step-list">
+      <li>Klikk på rad 2 (første rad under overskriften)</li>
+      <li>Gå til <em>Vis</em> → <em>Frys ruter</em> → <em>Frys øverste rad</em></li>
+    </ol>
+
+    <h3>Sorter og filtrer</h3>
+    <ol class="step-list">
+      <li>Merk hele tabellen din</li>
+      <li>Gå til <em>Data</em> → <em>Filter</em> – da dukker det opp piler i overskriftsraden</li>
+      <li>Klikk pilen i en kolonne for å sortere eller filtrere på den kolonnen</li>
+    </ol>
+
+    <div class="tip-box">
+      <strong>God vane:</strong> Ha alltid én rad med kolonneoverskrifter øverst. Ikke bland
+      overskrifter, data og totalsummer i samme kolonne – legg totalen nederst i en egen rad.
+    </div>
+  </section>
+
+  <!-- Oppgave -->
+  <section class="module-section" id="oppgave">
+    <h2>Praktisk oppgave</h2>
+    <p>Gjør dette i Excel eller Google Sheets – det tar ca. 10 minutter.</p>
+
+    <div class="task-box">
+      <h3>📊 Oppgave: Månedlig budsjett</h3>
+      <p>
+        Lag en enkel tabell med 5 utgiftsposter for en måned (f.eks. mat, transport, mobil,
+        fritid, klær). Legg inn beløp i kolonne B. Bruk <code style="color:#93c5fd;">=SUM()</code>
+        nederst for totalsum, og <code style="color:#93c5fd;">=B2/SUM($B$2:$B$6)</code> i
+        kolonne C for å vise hva hver post utgjør i prosent. Formater kolonne C som prosent.
+      </p>
+    </div>
+
+    <div class="task-box" style="margin-top:14px;">
+      <h3>🎯 Refleksjon</h3>
+      <p>
+        Hvilke formler kjente du fra før? Var det noe som overrasket deg?
+        Hvor tror du Excel kan hjelpe deg i praksis eller på jobb?
+      </p>
+    </div>
+  </section>
+
+  <!-- Oppsummering -->
+  <section class="module-section">
+    <h2>Oppsummering – ta med deg dette</h2>
+    <ol class="step-list">
+      <li>Alle formler starter med = (likhetstegn).</li>
+      <li>=SUM(), =GJENNOMSNITT(), =MIN(), =MAKS() er de viktigste grunnformlene.</li>
+      <li>Prosent beregnes med * og / – formater cellen for å vise %-tegn.</li>
+      <li>Frys øverste rad når du jobber med lange lister.</li>
+      <li>Hold alltid overskrifter, data og totaler adskilt i tabellen.</li>
+    </ol>
+  </section>
+
+  <button class="done-btn" id="doneBtn" onclick="markDone()">✓ Merk som fullført</button>
+
+  <div class="module-nav">
+    <a class="button button--secondary" href="soft-skills.html">← Soft Skills</a>
+    <a class="button" href="basic-word.html">Neste: Basic Word →</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>Yrkesforberedt • YFF VG1</p>
+  <p class="small">Bygg ferdigheter som teller.</p>
+</footer>
+
+<script>
+  const MODULE_KEY = 'modul-basic-excel';
+  function updateProgress() {
+    const done = localStorage.getItem(MODULE_KEY) === 'done';
+    document.getElementById('progressFill').style.width = done ? '100%' : '40%';
+    document.getElementById('progressLabel').textContent = done ? 'Fullført ✓' : 'I gang...';
+    if (done) {
+      document.getElementById('progressLabel').style.color = '#4ade80';
+      document.getElementById('doneBtn').textContent = '✓ Fullført';
+      document.getElementById('doneBtn').classList.add('done');
+    }
+  }
+  function markDone() {
+    localStorage.setItem(MODULE_KEY, 'done');
+    updateProgress();
+  }
+  if (!localStorage.getItem(MODULE_KEY)) localStorage.setItem(MODULE_KEY, 'started');
+  updateProgress();
+</script>
+</body>
+</html>

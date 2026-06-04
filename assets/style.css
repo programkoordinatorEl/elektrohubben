@@ -1,0 +1,465 @@
+/* =============================================
+   Yrkesforberedt – Shared Stylesheet
+   ============================================= */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap');
+
+/* --- CSS Variables --- */
+:root {
+  --color-bg:        #0b1020;
+  --color-surface:   #111827;
+  --color-surface-2: #1a2235;
+  --color-border:    #1f2937;
+  --color-border-hover: #22d3ee;
+  --color-accent:    #22d3ee;
+  --color-accent-dark: #06b6d4;
+  --color-accent-btn: #001e28;
+  --color-blue:      #1d4ed8;
+  --color-blue-dark: #1e3a8a;
+  --color-text:      #f1f5f9;
+  --color-muted:     #94a3b8;
+  --color-soft:      #cbd5e1;
+  --color-label:     #d1d5db;
+  --font-display:    'Sora', sans-serif;
+  --font-body:       'DM Sans', sans-serif;
+  --radius-sm:       8px;
+  --radius-md:       14px;
+  --radius-lg:       18px;
+  --radius-pill:     999px;
+  --shadow-card:     0 10px 30px rgba(0, 0, 0, 0.3);
+  --transition:      0.22s ease;
+}
+
+/* --- Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Base --- */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+/* --- Header --- */
+.site-header {
+  background: linear-gradient(135deg, var(--color-blue-dark), var(--color-accent-dark));
+  padding: 70px 20px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.site-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 60% 40%, rgba(6,182,212,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.site-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.site-header p {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  opacity: 0.93;
+  position: relative;
+}
+
+/* --- Nav --- */
+.site-nav {
+  background: #0d1525;
+  padding: 14px 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-nav a {
+  color: var(--color-soft);
+  text-decoration: none;
+  margin: 0 12px;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: color var(--transition);
+}
+
+.site-nav a:hover { color: var(--color-accent); }
+
+/* --- Container --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 24px;
+}
+
+/* --- Section Title --- */
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 28px;
+  letter-spacing: -0.3px;
+}
+
+/* --- Grid --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* --- Card --- */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-border-hover);
+  box-shadow: 0 16px 40px rgba(34, 211, 238, 0.12);
+}
+
+.card.completed {
+  border-color: #16a34a;
+  background: #0f1f14;
+}
+
+.card.completed .card__check {
+  display: flex;
+}
+
+.card__check {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: #4ade80;
+  font-weight: 600;
+}
+
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 0;
+}
+
+.card p {
+  font-size: 0.93rem;
+  color: var(--color-label);
+  line-height: 1.55;
+  flex: 1;
+  margin: 0;
+}
+
+/* --- Badge --- */
+.badge {
+  display: inline-block;
+  background: var(--color-blue);
+  color: #bfdbfe;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  align-self: flex-start;
+}
+
+/* --- CTA Button --- */
+.cta { margin-top: 48px; text-align: center; }
+
+.button {
+  display: inline-block;
+  background: var(--color-accent-dark);
+  color: var(--color-accent-btn);
+  padding: 14px 32px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.button:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.button--secondary {
+  background: transparent;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+}
+
+.button--secondary:hover {
+  background: rgba(34, 211, 238, 0.1);
+}
+
+/* --- Progress Bar --- */
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--color-border);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-blue), var(--color-accent));
+  border-radius: var(--radius-pill);
+  transition: width 0.4s ease;
+}
+
+.progress-label {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+}
+
+/* --- Module Page Specific --- */
+.module-header {
+  background: linear-gradient(135deg, var(--color-blue-dark), #0f2444);
+  padding: 56px 24px 48px;
+  text-align: center;
+}
+
+.module-header .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  opacity: 0.85;
+  transition: opacity var(--transition);
+}
+
+.module-header .back-link:hover { opacity: 1; }
+
+.module-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  margin-bottom: 10px;
+}
+
+.module-header .meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* --- Module Content --- */
+.module-content {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.module-section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.module-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 16px;
+}
+
+.module-section h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 20px 0 8px;
+}
+
+.module-section p {
+  color: var(--color-label);
+  font-size: 0.97rem;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.module-section ul,
+.module-section ol {
+  padding-left: 22px;
+  color: var(--color-label);
+  font-size: 0.97rem;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.module-section li { margin-bottom: 4px; }
+
+/* --- Tip Box --- */
+.tip-box {
+  background: rgba(34, 211, 238, 0.07);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 14px 18px;
+  margin: 18px 0;
+  font-size: 0.93rem;
+  color: var(--color-soft);
+}
+
+.tip-box strong { color: var(--color-accent); }
+
+/* --- Task/Reflection Box --- */
+.task-box {
+  background: rgba(29, 78, 216, 0.1);
+  border: 1px solid rgba(29, 78, 216, 0.35);
+  border-radius: var(--radius-md);
+  padding: 22px 26px;
+  margin-top: 20px;
+}
+
+.task-box h3 {
+  color: #93c5fd;
+  margin-bottom: 10px;
+}
+
+.task-box p { color: var(--color-label); margin: 0; }
+
+/* --- Step Indicator --- */
+.step-list {
+  counter-reset: steps;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.step-list li {
+  counter-increment: steps;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  color: var(--color-label);
+  font-size: 0.97rem;
+  margin-bottom: 0;
+}
+
+.step-list li::before {
+  content: counter(steps);
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: var(--color-blue);
+  color: #bfdbfe;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+/* --- Module Nav (prev/next) --- */
+.module-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* --- Mark Done Button --- */
+.done-btn {
+  display: block;
+  width: 100%;
+  margin-top: 32px;
+  padding: 16px;
+  background: #14532d;
+  color: #4ade80;
+  border: 1px solid #16a34a;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.done-btn:hover {
+  background: #166534;
+  transform: translateY(-2px);
+}
+
+.done-btn.done {
+  background: #052e16;
+  color: #4ade80;
+  cursor: default;
+  transform: none;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 36px 20px;
+  color: var(--color-muted);
+  border-top: 1px solid var(--color-border);
+  font-size: 0.92rem;
+}
+
+footer .small {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin-top: 4px;
+}

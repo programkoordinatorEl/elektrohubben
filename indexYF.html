@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yrkesforberedt | YFF VG1</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  /* Progress summary bar at top */
+  .progress-summary {
+    background: #0d1525;
+    border-bottom: 1px solid #1f2937;
+    padding: 14px 24px;
+    text-align: center;
+  }
+  .progress-summary p {
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    margin-bottom: 8px;
+  }
+  .progress-summary .progress-bar {
+    max-width: 400px;
+    margin: 0 auto 6px;
+  }
+  /* Card as link */
+  a.card { text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Yrkesforberedt</h1>
+  <p>Bygg ferdigheter for skole, praksis og arbeidsliv. Korte moduler for YFF VG1 innen soft skills, digitale verktøy og jobbklar kompetanse.</p>
+</header>
+
+<!-- Overall progress -->
+<div class="progress-summary">
+  <p>Din fremgang: <span id="completedCount">0</span> av <span id="totalCount">14</span> moduler fullført</p>
+  <div class="progress-bar"><div class="progress-bar__fill" id="overallProgress" style="width:0%"></div></div>
+</div>
+
+<nav class="site-nav">
+  <a href="#start">Startpakke</a>
+  <a href="#digital">Digitalt</a>
+  <a href="#arbeidsliv">Arbeidsliv</a>
+  <a href="#bonus">Bonus</a>
+</nav>
+
+<!-- STARTPAKKE -->
+<div class="container" id="start">
+  <h2 class="section-title">Startpakke</h2>
+  <div class="grid">
+    <a class="card" href="modules/soft-skills.html" data-module="modul-soft-skills">
+      <h3>Soft Skills</h3>
+      <p>Punktlighet, samarbeid, kommunikasjon og ansvar.</p>
+      <div class="card__check">✓ Fullført</div>
+      <span class="badge">20 min</span>
+    </a>
+    <a class="card" href="modules/basic-excel.html" data-module="modul-basic-excel">
+      <h3>Basic Excel</h3>
+      <p>Summering, prosent, lister og enkel orden.</p>
+      <div class="card__check">✓ Fullført</div>
+      <span class="badge">25 min</span>
+    </a>
+    <a class="card" href="modules/basic-word.html" data-module="modul-basic-word">
+      <h3>Basic Word</h3>
+      <p>CV, rapport, tabeller og lagre som PDF.</p>
+      <div class="card__check">✓ Fullført</div>
+      <span class="badge">20 min</span>
+    </a>
+    <a class="card" href="modules/pc-basics.html" data-module="modul-pc-basics">
+      <h3>PC Basics</h3>
+      <p>Passord, filer, e-post, printer og hurtigtaster.</p>
+      <div class="card__check">✓ Fullført</div>
+      <span class="badge">15 min</span>
+    </a>
+    <a class="card" href="modules/mappestruktur.html" data-module="modul-mappestruktur">
+      <h3>Mappestruktur</h3>
+      <p>Organiser filer smart og jobb profesjonelt.</p>
+      <div class="card__check">✓ Fullført</div>
+      <span class="badge">10 min</span>
+    </a>
+  </div>
+</div>
+
+<!-- DIGITALT -->
+<div class="container" id="digital">
+  <h2 class="section-title">Digitale ferdigheter</h2>
+  <div class="grid">
+    <a class="card" href="modules/ai-smart-bruk.html" data-module="modul-ai-smart-bruk">
+      <h3>AI Smart Bruk</h3>
+      <p>Hvordan bruke AI som hjelpemiddel på riktig måte.</p>
+      <div class="card__check">✓ Fullført</div>
+      <span class="badge">15 min</span>
+    </a>
+    <a class="card" href="modules/nettvett.html" data-module="modul-nettvett">
+      <h3>Nettvett</h3>
+      <p>Personvern, sikkerhet og digital dømmekraft.</p>
+      <div class="card__check">✓ Fullført</div>
+      <span class="badge">15 min</span>
+    </a>
+    <a class="card" href="modules/presentasjon.html" data-module="modul-presentasjon">
+      <h3>Presentasjon</h3>
+      <p>Lag en enkel og profesjonell presentasjon.</p>
+      <div class="card__check">✓ Fullført</div>
+      <span class="badge">20 min</span>
+    </a>
+  </div>
+</div>
+
+<!-- ARBEIDSLIV -->
+<div class="container" id="arbeidsliv">
+  <h2 class="section-title">Arbeidsliv</h2>
+  <div class="grid">
+    <a class="card" href="modules/cv-og-soknad.html" data-module="modul-cv-og-soknad">
+      <h3>CV og Søknad</h3>
+      <p>Lag en enkel CV og søknad for praksisplass.</p>
+      <div class="card__check">✓ Fullført</div>
+      <span class="badge">30 min</span>
+    </a>
+    <a class="card" href="modules/intervju.html" data-module="modul-intervju">
+      <h3>Intervju</h3>
+      <p>Hva sier du, hva spør de om, og hvordan forberede seg.</p>
+      <div class="card__check">✓ Fullført</div>
+      <span class="badge">15 min</span>
+    </a>
+    <a class="card" href="modules/hms.html" data-module="modul-hms">
+      <h3>HMS</h3>
+      <p>Sikkerhet, risiko og gode vaner på jobb.</p>
+      <div class="card__check">✓ Fullført</div>
+      <span class="badge">20 min</span>
+    </a>
+  </div>
+</div>
+
+<!-- BONUS -->
+<div class="container" id="bonus">
+  <h2 class="section-title">Bonus Levels</h2>
+  <div class="grid">
+    <a class="card" href="modules/okonomi.html" data-module="modul-okonomi">
+      <h3>Økonomi for ungdom</h3>
+      <p>Budsjett, lønnsslipp og sparing.</p>
+      <div class="card__check">✓ Fullført</div>
+      <span class="badge">20 min</span>
+    </a>
+    <a class="card" href="modules/kundeservice.html" data-module="modul-kundeservice">
+      <h3>Kundeservice</h3>
+      <p>Profesjonell oppførsel og serviceinnstilling.</p>
+      <div class="card__check">✓ Fullført</div>
+      <span class="badge">15 min</span>
+    </a>
+    <a class="card" href="modules/future-skills.html" data-module="modul-future-skills">
+      <h3>Future Skills</h3>
+      <p>Hva arbeidsgivere ønsker i fremtiden.</p>
+      <div class="card__check">✓ Fullført</div>
+      <span class="badge">10 min</span>
+    </a>
+  </div>
+  <div class="cta">
+    <a class="button" href="modules/soft-skills.html">Start første modul →</a>
+  </div>
+</div>
+
+<footer>
+  <p>Klar for praksis • YFF VG1</p>
+  <p class="small">Bygg ferdigheter som teller.</p>
+</footer>
+
+<script>
+  // Check localStorage for each module and update card appearance
+  const cards = document.querySelectorAll('[data-module]');
+  const total = cards.length;
+  let completed = 0;
+
+  cards.forEach(card => {
+    const key = card.dataset.module;
+    if (localStorage.getItem(key) === 'done') {
+      card.classList.add('completed');
+      completed++;
+    }
+  });
+
+  // Update overall progress bar
+  document.getElementById('completedCount').textContent = completed;
+  document.getElementById('totalCount').textContent = total;
+  document.getElementById('overallProgress').style.width = (completed / total * 100) + '%';
+</script>
+
+</body>
+</html>
