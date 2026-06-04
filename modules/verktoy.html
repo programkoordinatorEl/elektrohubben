@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verktøylære</title>
+
+<style>
+body{
+    font-family:Arial, sans-serif;
+    margin:0;
+    background:#f5f5f5;
+}
+
+header{
+    background:#1f2937;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+.filters{
+    text-align:center;
+    padding:20px;
+}
+
+.filters button{
+    padding:10px 15px;
+    margin:5px;
+    border:none;
+    cursor:pointer;
+    border-radius:6px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 6px rgba(0,0,0,.15);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:15px;
+}
+
+.card h3{
+    margin-top:0;
+}
+
+.more{
+    display:none;
+    margin-top:10px;
+    color:#444;
+}
+
+.card button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.quiz{
+    background:white;
+    margin:30px;
+    padding:20px;
+    border-radius:10px;
+}
+
+.correct{
+    color:green;
+    font-weight:bold;
+}
+
+.wrong{
+    color:red;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Verktøylære</h1>
+<p>Lær de vanligste verktøyene innen elektro, nettverk og teknikk.</p>
+</header>
+
+<div class="filters">
+<button onclick="filterCards('all')">Alle</button>
+<button onclick="filterCards('elektro')">Elektro</button>
+<button onclick="filterCards('nettverk')">Nettverk</button>
+<button onclick="filterCards('måling')">Måleverktøy</button>
+<button onclick="filterCards('mekanisk')">Mekaniske</button>
+</div>
+
+<div class="grid">
+
+<div class="card mekanisk">
+<img src="images/drill.jpg" alt="Drill">
+<div class="card-content">
+<h3>Batteridrill</h3>
+<p>Brukes til boring og skruing.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Moment og hastighet kan justeres etter oppgaven.
+</div>
+</div>
+</div>
+
+<div class="card mekanisk">
+<img src="images/drillbit.jpg" alt="Bor">
+<div class="card-content">
+<h3>Bor</h3>
+<p>Lager hull i ulike materialer.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Finnes for tre, metall og betong.
+</div>
+</div>
+</div>
+
+<div class="card mekanisk">
+<img src="images/bits.jpg" alt="Bits">
+<div class="card-content">
+<h3>Bits</h3>
+<p>Brukes til skruer.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Torx, Phillips og Pozidriv er vanlige typer.
+</div>
+</div>
+</div>
+
+<div class="card mekanisk">
+<img src="images/screwdriver.jpg" alt="Skrutrekker">
+<div class="card-content">
+<h3>Skrutrekker</h3>
+<p>Manuell skruing.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Gir god kontroll ved presisjonsarbeid.
+</div>
+</div>
+</div>
+
+<div class="card elektro">
+<img src="images/combination_pliers.jpg" alt="Kombinasjonstang">
+<div class="card-content">
+<h3>Kombinasjonstang</h3>
+<p>Griper og klipper ledninger.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Et av de mest brukte elektroverktøyene.
+</div>
+</div>
+</div>
+
+<div class="card elektro">
+<img src="images/stripper.jpg" alt="Avisoleringstang">
+<div class="card-content">
+<h3>Avisoleringstang</h3>
+<p>Fjerner isolasjon.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Skader normalt ikke lederen.
+</div>
+</div>
+</div>
+
+<div class="card elektro">
+<img src="images/cutter.jpg" alt="Sideavbiter">
+<div class="card-content">
+<h3>Sideavbiter</h3>
+<p>Klipper ledninger.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Brukes mye ved kabelarbeid.
+</div>
+</div>
+</div>
+
+<div class="card elektro">
+<img src="images/crimper.jpg" alt="Krympetang">
+<div class="card-content">
+<h3>Krympetang</h3>
+<p>Monterer kabelsko.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Gir en sterk elektrisk forbindelse.
+</div>
+</div>
+</div>
+
+<div class="card måling">
+<img src="images/multimeter.jpg" alt="Multimeter">
+<div class="card-content">
+<h3>Multimeter</h3>
+<p>Måler elektriske størrelser.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Måler spenning, strøm og motstand.
+</div>
+</div>
+</div>
+
+<div class="card nettverk">
+<img src="images/networktester.jpg" alt="Nettverkstester">
+<div class="card-content">
+<h3>Nettverkstester</h3>
+<p>Tester nettverkskabler.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Kan avsløre kabelbrudd og feil terminering.
+</div>
+</div>
+</div>
+
+<div class="card nettverk">
+<img src="images/rj45.jpg" alt="RJ45 tang">
+<div class="card-content">
+<h3>RJ45-krympetang</h3>
+<p>Monterer nettverkskontakter.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Brukes ved produksjon av nettverkskabler.
+</div>
+</div>
+</div>
+
+<div class="card nettverk">
+<img src="images/cablestripper.jpg" alt="Kabelstripper">
+<div class="card-content">
+<h3>Kabelstripper</h3>
+<p>Fjerner ytterkappe.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Vanlig ved installasjon av nettverkskabler.
+</div>
+</div>
+</div>
+
+<div class="card måling">
+<img src="images/level.jpg" alt="Vater">
+<div class="card-content">
+<h3>Vater</h3>
+<p>Kontrollerer om noe er rett.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Brukes ved montering av utstyr.
+</div>
+</div>
+</div>
+
+<div class="card måling">
+<img src="images/tape.jpg" alt="Målebånd">
+<div class="card-content">
+<h3>Målebånd</h3>
+<p>Måler avstander.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Et grunnleggende verktøy i alle fag.
+</div>
+</div>
+</div>
+
+<div class="card måling">
+<img src="images/caliper.jpg" alt="Skyvelære">
+<div class="card-content">
+<h3>Skyvelære</h3>
+<p>Nøyaktige målinger.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Måler diameter og tykkelse.
+</div>
+</div>
+</div>
+
+<div class="card mekanisk">
+<img src="images/wrench.jpg" alt="Fastnøkkel">
+<div class="card-content">
+<h3>Fastnøkkel</h3>
+<p>Brukes på muttere.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Må passe riktig dimensjon.
+</div>
+</div>
+</div>
+
+<div class="card mekanisk">
+<img src="images/adjustable.jpg" alt="Skiftenøkkel">
+<div class="card-content">
+<h3>Skiftenøkkel</h3>
+<p>Justerbar nøkkel.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Passer mange størrelser.
+</div>
+</div>
+</div>
+
+<div class="card mekanisk">
+<img src="images/hammer.jpg" alt="Hammer">
+<div class="card-content">
+<h3>Hammer</h3>
+<p>Slår inn spiker.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Et klassisk håndverktøy.
+</div>
+</div>
+</div>
+
+<div class="card elektro">
+<img src="images/soldering.jpg" alt="Loddebolt">
+<div class="card-content">
+<h3>Loddebolt</h3>
+<p>Lodder elektriske forbindelser.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Brukes mye innen elektronikk.
+</div>
+</div>
+</div>
+
+<div class="card elektro">
+<img src="images/heatgun.jpg" alt="Varmepistol">
+<div class="card-content">
+<h3>Varmepistol</h3>
+<p>Genererer varm luft.</p>
+<button onclick="toggle(this)">Vis mer</button>
+<div class="more">
+Brukes blant annet til krympestrømper.
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="quiz">
+<h2>Quiz</h2>
+<p>Hva brukes et multimeter til?</p>
+
+<button onclick="check(this,false)">Klipping av kabler</button>
+<button onclick="check(this,true)">Måling av spenning, strøm og motstand</button>
+<button onclick="check(this,false)">Lodding</button>
+
+<p id="result"></p>
+</div>
+
+<script>
+function toggle(btn){
+    let more = btn.nextElementSibling;
+    more.style.display =
+    more.style.display === "block" ? "none" : "block";
+}
+
+function filterCards(category){
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card=>{
+        if(category==="all"){
+            card.style.display="block";
+        }else{
+            card.style.display=
+            card.classList.contains(category)
+            ? "block"
+            : "none";
+        }
+    });
+}
+
+function check(button,correct){
+    const result=document.getElementById("result");
+
+    if(correct){
+        result.innerHTML="<span class='correct'>Riktig!</span>";
+    }else{
+        result.innerHTML="<span class='wrong'>Feil svar.</span>";
+    }
+}
+</script>
+
+</body>
+</html>
